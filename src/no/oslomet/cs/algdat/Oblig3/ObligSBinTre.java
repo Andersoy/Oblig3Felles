@@ -389,20 +389,87 @@ public class ObligSBinTre<T> implements Beholder<T> {
     }
   }
   
-  private static <T> Node<T> nesteInorden(Node<T> p)
-  {
-    throw new UnsupportedOperationException("Ikke kodet ennå!");
+  private static <T> Node<T> nesteInorden(Node<T> p) {
+
+    if(p.høyre != null){
+      p = p.høyre;
+      while(p.venstre != null){
+        p = p.venstre;
+      }
+    }
+    else {
+      while(p.forelder != null && p.forelder.høyre == p){
+        p = p.forelder;
+      }
+      p = p.forelder;
+    }
+
+    return p;
   }
   
   @Override
   public String toString()
   {
-    throw new UnsupportedOperationException("Ikke kodet ennå!");
+    if(tom()){
+      return "[]";
+    }
+    StringBuilder streng = new StringBuilder();
+    streng.append("[");
+
+    Node<T> p = rot;
+
+    while(p.venstre != null) {
+        p = p.venstre;
+    }
+    streng.append(p.verdi);
+    p = nesteInorden(p);
+
+    while(p != null){
+      streng.append(", "+ p.verdi);
+      p = nesteInorden(p);
+
+    }
+    streng.append("]");
+
+    return streng.toString();
   }
   
   public String omvendtString()
   {
-    throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+    if (tom()){
+      return "[]"; // tomt tre
+    }
+
+    StringBuilder streng = new StringBuilder();
+    streng.append("[");
+
+    Stakk<Node<T>> stakk = new TabellStakk<>();
+    Node<T> p = rot;   // starter i roten og går til høyre
+
+    while (true)
+    {
+      while (p != null)
+      {
+        stakk.leggInn(p);
+        p = p.høyre;
+      }
+      if (stakk.tom())
+        break;
+      p = stakk.taUt();
+      if(streng.length() == 1){
+        streng.append(p.verdi);
+      }
+      else {
+        streng.append(", " + p.verdi);
+      }
+
+      p = p.venstre;
+    }
+
+    streng.append("]");
+
+    return streng.toString();
   }
   
   public String høyreGren() {
