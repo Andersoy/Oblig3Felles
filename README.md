@@ -14,8 +14,8 @@ Oppgaven er levert av følgende studenter:
 
 I oppgaven har vi hatt følgende arbeidsfordeling:
 * Anders Oyrehagen har hatt hovedansvar for oppgave 1 og 2, og har bidratt på alle oppgaver.
-* Anders Magnus Ytterboee har hatt hovedansvar for oppgave .....
-* Tommy Grut har hatt hovedansvar for oppgave ....
-* Tobias Dyre Evju har hatt hovedansvar for .....
-* Theodor Fredheim Aandal har hatt hovedansvar for oppgave 0.
-* Vi har i fellesskap jobbet med ......
+* Anders Magnus Ytterboee har hatt hovedansvar for oppgave 5 og 6.
+* Tommy Grut har hatt hovedansvar for oppgave 9 og 10.
+* Tobias Dyre Evju har hatt hovedansvar for oppgave 7 og 8.
+* Theodor Fredheim Aandal har hatt hovedansvar for oppgave 0, 3 og 4.
+* Vi har i fellesskap jobbet med alle oppgavene.
